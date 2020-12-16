@@ -1,0 +1,10 @@
+module Mul(I1, I2, Out)
+	
+	input [31:0] I1, I2;
+	output [31:0] Out;
+	
+	reg [31:0] Temp;
+	
+	Temp = I1 * I2;
+	assign Out = Temp;
+endmodule

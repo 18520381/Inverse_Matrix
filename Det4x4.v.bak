@@ -1,0 +1,28 @@
+module Det4x4(In, Out)
+
+	input [31:0] In [15:0];
+	output [31:0] Out;
+	
+	reg [31:0] Temp1, Temp2, Temp3, Temp4, Temp5, Temp6;
+	
+	Det3x3 x00(In[5], In[6], In[7], In[9], In[10], In[11], In[13], In[14], In[15], Temp5);
+	Temp1 = Mul(Temp5, In[0]);
+	
+	Det3x3 x01(In[1], In[2], In[3], In[9], In[10], In[11], In[13], In[14], In[15], Temp5);
+	Temp6 = Mul(Temp5, In[4]);
+	Temp2 = -Temp6;
+	
+	Det3x3 x02(In[1], In[2], In[3], In[5], In[6], In[7], In[13], In[14], In[15], Temp5);
+	Temp3 = Mul(Temp5, In[8]);
+	
+	Det3x3 x03(In[1], In[2], In[3], In[5], In[6], In[7], In[9], In[10], In[11], Temp5);
+	Temp6 = Mul(Temp5, In[12]);
+	Temp4 = -Temp6;
+	
+	Temp5 = Sub(Temp1, Temp2);
+	Temp6 = Sum(Temp5, Temp3);
+	Temp5 = Sub(Temp6, Temp4);
+	
+	assign Out = Temp5;
+	
+endmodule

@@ -1,0 +1,34 @@
+module Det3x3(I11, I12, I13, I21, I22, I23, I31, I32, I33, Out)
+
+	input [31:0] I11, I12, I13, I21, I22, I23, I31, I32, I33;
+	output [31:0] Out;
+	
+	reg [31:0] Temp1, Temp2, Temp3, Temp4;
+	
+	Temp3 = Mul(I11, I22);
+	Temp4 = Mul(Temp3, I33);
+	Temp1 = Temp4;
+	
+	Temp3 = Mul(I12, I23);
+	Temp4 = Mul(Temp3, I31);
+	Temp2 = Sum(Temp1, Temp4);
+	
+	Temp3 = Mul(I13, I21);
+	Temp4 = Mul(Temp3, I32);
+	Temp1 = Sum(Temp2, Temp4);
+	
+	Temp3 = Mul(I13, I22);
+	Temp4 = Mul(Temp3, I31);
+	Temp2 = Sub(Temp1, Temp4);
+	
+	Temp3 = Mul(I11, I23);
+	Temp4 = Mul(Temp3, I32);
+	Temp1 = Sub(Temp2, Temp4);
+	
+	Temp3 = Mul(I12, I21);
+	Temp4 = Mul(Temp3, I33);
+	Temp2 = Sub(Temp1, Temp4);
+	
+	assign Out = Temp2;
+	
+endmodule

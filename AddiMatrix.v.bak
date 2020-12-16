@@ -1,0 +1,36 @@
+module AddiMatrix(I, Out)
+
+	input [31:0] I [15:0];
+	output [31:0] Out [15:0];
+	
+	reg [31:0] In [15:0];
+	reg [31:0] Temp [15:0];
+	
+	In[0] = I[15]; In[1] = I[14];	In[2] = I[13];	In[3] = I[12];
+	In[4] = I[11];	In[5] = I[10];	In[6] = I[9];	In[7] = I[8];
+	In[8] = I[7];	In[9] = I[6];	In[10] = I[5];	In[11] = I[4];
+	In[12] = I[3];	In[13] = I[2];	In[14] = I[1];	In[15] = I[0];
+	
+	Det d00(In[5], In[6], In[7], In[9], In[10], In[11], In[13], In[14], In[15], Temp[0]);
+	Det d01(In[4], In[6], In[7], In[8], In[10], In[11], In[12], In[14], In[15], Temp[1]);
+	Det d02(In[4], In[5], In[7], In[8], In[9], In[11], In[12], In[13], In[15], Temp[2]);
+	Det d03(In[4], In[5], In[6], In[8], In[9], In[10], In[12], In[13], In[14], Temp[3]);
+	
+	Det d04(In[1], In[2], In[3], In[9], In[10], In[11], In[13], In[14], In[15], Temp[4]);
+	Det d05(In[0], In[2], In[3], In[8], In[10], In[11], In[12], In[14], In[15], Temp[5]);
+	Det d06(In[0], In[1], In[3], In[8], In[9], In[11], In[12], In[13], In[15], Temp[6]);
+	Det d07(In[0], In[1], In[2], In[8], In[9], In[10], In[12], In[13], In[14], Temp[7]);
+	
+	Det d08(In[1], In[2], In[3], In[5], In[6], In[7], In[13], In[14], In[15], Temp[8]);
+	Det d09(In[0], In[2], In[3], In[4], In[6], In[7], In[12], In[14], In[15], Temp[9]);
+	Det d10(In[0], In[1], In[3], In[4], In[5], In[7], In[12], In[13], In[15], Temp[10]);
+	Det d11(In[0], In[1], In[2], In[4], In[5], In[6], In[12], In[13], In[14], Temp[11]);
+	
+	Det d12(In[1], In[2], In[3], In[5], In[6], In[7], In[9], In[10], In[11], Temp[12]);
+	Det d13(In[0], In[2], In[3], In[4], In[6], In[7], In[8], In[10], In[11], Temp[13]);
+	Det d14(In[0], In[1], In[3], In[4], In[5], In[7], In[8], In[9], In[11], Temp[14]);
+	Det d15(In[0], In[1], In[2], In[4], In[5], In[6], In[8], In[9], In[10], Temp[15]);
+	
+	assign Out = Temp;
+	
+endmodule
