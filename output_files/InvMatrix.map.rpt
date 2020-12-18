@@ -1,5 +1,5 @@
 Analysis & Synthesis report for InvMatrix
-Wed Dec 16 14:13:00 2020
+Fri Dec 18 20:47:24 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,10 +36,10 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Dec 16 14:13:00 2020               ;
+; Analysis & Synthesis Status        ; Failed - Fri Dec 18 20:47:24 2020               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; InvMatrix                                       ;
-; Top-level Entity Name              ; Det4x4                                          ;
+; Top-level Entity Name              ; InvMatrix                                       ;
 ; Family                             ; Cyclone II                                      ;
 ; Total logic elements               ; N/A until Partition Merge                       ;
 ;     Total combinational functions  ; N/A until Partition Merge                       ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; Det4x4             ; InvMatrix          ;
+; Top-level entity name                                                      ; InvMatrix          ; InvMatrix          ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -155,9 +155,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Dec 16 14:12:59 2020
+    Info: Processing started: Fri Dec 18 20:47:22 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off InvMatrix -c InvMatrix
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file invmatrix.v
+    Info (12023): Found entity 1: InvMatrix
+Info (12021): Found 1 design units, including 1 entities, in source file addimatrix.v
+    Info (12023): Found entity 1: AddiMatrix
 Info (12021): Found 1 design units, including 1 entities, in source file sum.v
     Info (12023): Found entity 1: Sum
 Info (12021): Found 1 design units, including 1 entities, in source file sub.v
@@ -170,15 +174,28 @@ Info (12021): Found 1 design units, including 1 entities, in source file det3x3.
     Info (12023): Found entity 1: Det3x3
 Info (12021): Found 1 design units, including 1 entities, in source file det4x4.v
     Info (12023): Found entity 1: Det4x4
-Info (12021): Found 1 design units, including 1 entities, in source file addimatrix.v
-    Info (12023): Found entity 1: AddiMatrix
-Info (12021): Found 1 design units, including 1 entities, in source file invmatrix.v
-    Info (12023): Found entity 1: InvMatrix
-Error (10773): Verilog HDL error at Det4x4.v(3): declaring module ports or function arguments with unpacked array types requires SystemVerilog extensions File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/Det4x4.v Line: 3
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4573 megabytes
-    Error: Processing ended: Wed Dec 16 14:13:00 2020
-    Error: Elapsed time: 00:00:01
+Info (12127): Elaborating entity "InvMatrix" for the top level hierarchy
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O0" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O1" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O2" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O3" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O4" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O5" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O6" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O7" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O8" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O9" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O10" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O11" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O12" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O13" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O14" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (10663): Verilog HDL Port Connection error at InvMatrix.v(11): output or inout port "O15" must be connected to a structural net expression File: E:/BT/HK5/Thiet ke HTS HDL/Final/InvMatrix/InvMatrix.v Line: 11
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 17 errors, 1 warning
+    Error: Peak virtual memory: 4574 megabytes
+    Error: Processing ended: Fri Dec 18 20:47:24 2020
+    Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:01
 
 
